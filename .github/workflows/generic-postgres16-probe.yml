@@ -1,0 +1,52 @@
+name: Generic PostgreSQL 16 capability probe
+run-name: Generic PostgreSQL 16 capability probe ${{ inputs.probe_id }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      probe_id:
+        description: Nonsecret correlation identifier for this generic probe
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  environment-probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_DB: generic_probe
+          POSTGRES_HOST_AUTH_METHOD: trust
+        options: >-
+          --health-cmd "pg_isready -U postgres -d generic_probe"
+          --health-interval 5s
+          --health-timeout 3s
+          --health-retries 10
+    steps:
+      - name: Verify generic server version extensions and fixed query
+        shell: bash
+        env:
+          PG_CONTAINER: ${{ job.services.postgres.id }}
+        run: |
+          set -euo pipefail
+          args=(exec "$PG_CONTAINER" psql -X -U postgres -d generic_probe -A -t -v ON_ERROR_STOP=1)
+          version_num=$(docker "${args[@]}" -c 'SHOW server_version_num;')
+          [[ "$version_num" =~ ^[0-9]+$ ]]
+          test "$version_num" -ge 160000
+          test "$version_num" -lt 170000
+          printf 'PROBE_SERVER_VERSION_NUM=%s\n' "$version_num"
+          version_text=$(docker "${args[@]}" -c 'SHOW server_version;')
+          printf 'PROBE_SERVER_VERSION=%s\n' "$version_text"
+          docker "${args[@]}" -c 'CREATE EXTENSION pg_trgm; CREATE EXTENSION vector;'
+          extensions=$(docker "${args[@]}" -c "SELECT string_agg(extname || ':' || extversion, ',' ORDER BY extname) FROM pg_extension WHERE extname IN ('pg_trgm','vector');")
+          [[ "$extensions" =~ ^pg_trgm:[0-9.]+,vector:[0-9.]+$ ]]
+          printf 'PROBE_EXTENSIONS=%s\n' "$extensions"
+          fixed=$(docker "${args[@]}" -c 'SELECT 1;')
+          test "$fixed" = 1
+          printf 'PROBE_FIXED_SELECT=1\n'
