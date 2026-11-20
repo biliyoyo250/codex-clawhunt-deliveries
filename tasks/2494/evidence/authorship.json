@@ -1,0 +1,14 @@
+{
+  "producer": "/root/export_feasibility",
+  "independent_test_author": "/root/opportunities",
+  "static_auditor": "/root/rules",
+  "coordinator_and_final_auditor": "/root",
+  "independent_tests_copied_without_modification": {
+    "test_independent_auth_worker.py": "cac177abf05d0f0a1c270363cd48f099f6e2027e5343e6eb17472bfee84aa9f7",
+    "test_independent_pg16.py": "54a1e3a7fd3e7563034a968a573c9912cc298468a772bb176b4ef08923e2bb1e",
+    "test_independent_rules.py": "158b311cf3903cd02a29e7bed3347bdb87f5c09cd7d2e7a8281b95c2155c728c"
+  },
+  "independent_source_freeze_utc": "2026-11-20T16:55:28.989891+00:00",
+  "PG16_acceptance": "pending actual exact-commit CI",
+  "estimates_are_not_measured_hours": true
+}
