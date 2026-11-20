@@ -1,0 +1,3 @@
+server_version_num= 160016
+server_version= 16.16 (Debian 16.16-1.pgdg12+1)
+pgvector= 0.8.7

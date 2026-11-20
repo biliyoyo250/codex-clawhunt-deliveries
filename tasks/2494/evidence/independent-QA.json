@@ -1,0 +1,33 @@
+{
+  "task_id": 2494,
+  "independent_QA_result": "passed_for_tested_reference_component",
+  "tested_source_commit": "b566240f65fa98acbd80373c001e87a6ab199aba",
+  "CI_run_url": "https://github.com/biliyoyo250/codex-clawhunt-deliveries/actions/runs/44778431678",
+  "verified_at_utc": "2026-11-20T17:03:13.372038+00:00",
+  "environment": {
+    "python": "3.12.16",
+    "postgresql": "16.16",
+    "server_version_num": 160016,
+    "pgvector": "0.8.7"
+  },
+  "test_counts": {
+    "all_tests_passed": 134,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "independent_passed": 98,
+    "independent_real_PG16_passed": 42,
+    "independent_rules_HTTP_worker_passed": 56,
+    "producer_passed_not_counted_as_independent": 36,
+    "all_real_PG16_passed": 55
+  },
+  "independent_test_SHA256": {
+    "test_independent_auth_worker.py": "cac177abf05d0f0a1c270363cd48f099f6e2027e5343e6eb17472bfee84aa9f7",
+    "test_independent_pg16.py": "54a1e3a7fd3e7563034a968a573c9912cc298468a772bb176b4ef08923e2bb1e",
+    "test_independent_rules.py": "158b311cf3903cd02a29e7bed3347bdb87f5c09cd7d2e7a8281b95c2155c728c"
+  },
+  "migration_roundtrip_and_drift_check": "Upgrade, downgrade, upgrade and the Alembic no-drift check passed on actual PostgreSQL 16.16.",
+  "critical_cases": "Passed: exact 24/48-hour boundaries; Shanghai calendar urgency; recipient routing; epoch resets; concurrent idempotency; failed-send and accept-before-acknowledgement rollback recovery; stale ORM preload regressions; original-generation claim duration; and organization/site permissions.",
+  "scope_boundary": "Tests used synthetic reference data. Customer deployment and the real notification API were not exercised. That API must durably deduplicate stable keys. Evidence-only additions after CI do not change tested source or tests. QA pass does not mean buyer acceptance or payment.",
+  "local_PG_claim": "No local PostgreSQL pass is claimed. All 42 independent PostgreSQL tests ran in the linked CI."
+}

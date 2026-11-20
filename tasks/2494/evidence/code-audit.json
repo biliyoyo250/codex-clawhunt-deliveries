@@ -1,0 +1,10 @@
+{
+  "task_id": 2494,
+  "reviewer": "/root/rules",
+  "checked_at_utc": "2026-11-20T17:00:41.155964+00:00",
+  "passed": true,
+  "source_commit_sha": "b566240f65fa98acbd80373c001e87a6ab199aba",
+  "summary": "固定源码commit b566240f65fa98acbd80373c001e87a6ab199aba已完成静态代码审计与真实CI证据核对。Python3.12.16/PostgreSQL16.16环境中134项测试全部通过、零失败/错误/跳过，其中98项独立测试、55项真实PG测试；迁移升降再升及Alembic一致性检查通过。锁后缓存刷新、配置整数边界、并发幂等和接收后崩溃回滚等关键回归已通过。模型partial index已与迁移一致。此为执行/交付证据，不是买家验收或结算证明。",
+  "unresolved_code_findings": [],
+  "tests_reexecuted_by_auditor": false
+}

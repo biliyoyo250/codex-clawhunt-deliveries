@@ -9,6 +9,16 @@
     "test_independent_rules.py": "158b311cf3903cd02a29e7bed3347bdb87f5c09cd7d2e7a8281b95c2155c728c"
   },
   "independent_source_freeze_utc": "2026-11-20T16:55:28.989891+00:00",
-  "PG16_acceptance": "pending actual exact-commit CI",
+  "PG16_acceptance": {
+    "status": "passed",
+    "source_commit_sha": "b566240f65fa98acbd80373c001e87a6ab199aba",
+    "run_id": 44778431678,
+    "tests": 134,
+    "independent_tests": 98,
+    "real_PG16_tests": 55,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
   "estimates_are_not_measured_hours": true
 }

@@ -1,0 +1,44 @@
+{
+  "checked_at_utc": "2026-11-20T16:59:16.225007+00:00",
+  "run_id": 44778431678,
+  "run_url": "https://github.com/biliyoyo250/codex-clawhunt-deliveries/actions/runs/44778431678",
+  "tested_commit_sha": "b566240f65fa98acbd80373c001e87a6ab199aba",
+  "artifact_id": 14650298964,
+  "artifact_name": "task-2494-evidence-44778431678-1",
+  "artifact_sha256": "dc9cbbe0656f5eaba58bb4eae5edbd71bbea31f3b0da0e60b58a91acb25b8716",
+  "download_forwarded_authentication": false,
+  "counts": {
+    "tests": 134,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0
+  },
+  "independent_tests": 98,
+  "real_PG16_tests": 55,
+  "files": {
+    "pytest.log": {
+      "sha256": "923e2489409243413f2e991dd0154ac51f289417a022dd0b211ad1c6287d7501",
+      "bytes": 17285
+    },
+    "postgres.log": {
+      "sha256": "0c28f5b4ed539fe6e0f8f54f89f37e57611c0a843cf7e34613cb01ac0dfef2f9",
+      "bytes": 91
+    },
+    "junit.xml": {
+      "sha256": "3ffb56b816aa0d78ccce5dec7fbfdb084bb6fbe0129980f27d9da17677b30182",
+      "bytes": 19817
+    },
+    "migrations.log": {
+      "sha256": "996b5dbd074f531a8109a1059e2cbe6da592ea9162dfcb58ce3666a5ca9759bb",
+      "bytes": 1537
+    },
+    "install.log": {
+      "sha256": "16a45d2e75abddac3ee2b6a2bc81ec4adb898f21d27ed87e1026193213436984",
+      "bytes": 7156
+    },
+    "environment.log": {
+      "sha256": "b3bb0da7f11a905c6c8959c06110b2784629d2d1baafc427f990cd21f90915f2",
+      "bytes": 521
+    }
+  }
+}
